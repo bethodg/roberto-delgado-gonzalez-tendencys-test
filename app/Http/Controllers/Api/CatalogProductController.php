@@ -146,6 +146,16 @@ class CatalogProductController extends Controller
                 return new ObjectId($id);
             }, $validatedData['ids']);
 
+            $existingProducts = CatalogProduct::whereIn('_id', $objectIds)->pluck('_id')->toArray();
+
+            if (count($existingProducts) !== count($objectIds)) {
+                $nonExistingIds = array_diff($objectIds, $existingProducts);
+                return response()->json([
+                    'message' => 'Some products do not exist',
+                    'non_existing_ids' => $nonExistingIds
+                ], 404);
+            }
+
             CatalogProduct::whereIn('_id', $objectIds)->delete();
 
             return response()->json(['message' => 'Products deleted successfully']);
