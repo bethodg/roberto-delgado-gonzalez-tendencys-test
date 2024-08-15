@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\TokenController;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-Route::prefix('products')->group(function () {
+Route::prefix('products')->middleware('auth:sanctum')->group(function () {
      // Rutas para operaciones en Batch
      Route::post('batch', [CatalogProductController::class, 'batchStore']);
      Route::put('batch', [CatalogProductController::class, 'batchUpdate']);
@@ -28,7 +28,7 @@ Route::prefix('users')->group(function () {
     Route::get('{id}', [UserController::class, 'show']);    // Obtener un usuario específico
     Route::post('/', [UserController::class, 'store']);     // Crear un nuevo usuario
     Route::put('{id}', [UserController::class, 'update']);  // Actualizar un usuario existente
-    Route::delete('{id}', [UserController::class, 'destroy']); // Eliminar un usuario
+    Route::delete('{id}', [UserController::class, 'destroy'])->middleware('auth:sanctum'); // Eliminar un usuario
 });
 
 Route::prefix('tokens')->group(function () {
