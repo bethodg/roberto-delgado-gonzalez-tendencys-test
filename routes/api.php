@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CatalogProductController;
+use App\Http\Controllers\Api\TokenController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -28,4 +29,8 @@ Route::prefix('users')->group(function () {
     Route::post('/', [UserController::class, 'store']);     // Crear un nuevo usuario
     Route::put('{id}', [UserController::class, 'update']);  // Actualizar un usuario existente
     Route::delete('{id}', [UserController::class, 'destroy']); // Eliminar un usuario
+});
+
+Route::prefix('tokens')->group(function () {
+    Route::post('/create', [TokenController::class, 'create']);
 });

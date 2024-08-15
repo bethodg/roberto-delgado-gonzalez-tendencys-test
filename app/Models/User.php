@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use MongoDB\Laravel\Eloquent\Model as Eloquent;
 
 class User extends Eloquent
 {
-    use HasFactory, Notifiable, Authenticatable;
+    use HasFactory, Notifiable, Authenticatable, HasApiTokens;
 
     protected $connection = 'mongodb'; // Especifica la conexión a MongoDB
 
