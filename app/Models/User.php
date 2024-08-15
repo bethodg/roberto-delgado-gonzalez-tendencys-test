@@ -12,12 +12,12 @@ class User extends Eloquent
 {
     use HasFactory, Notifiable, Authenticatable, HasApiTokens;
 
-    protected $connection = 'mongodb'; // Especifica la conexión a MongoDB
+    protected $connection = 'mongodb';
 
-    protected $collection = 'users'; // Especifica la colección
+    protected $collection = 'users';
 
     /**
-     * Los atributos que son asignables en masa.
+     *
      *
      * @var array
      */
@@ -30,7 +30,7 @@ class User extends Eloquent
     ];
 
     /**
-     * Los atributos que deben ser ocultos para los arreglos.
+     *
      *
      * @var array
      */
@@ -40,7 +40,7 @@ class User extends Eloquent
     ];
 
     /**
-     * Los atributos que deben ser convertidos a tipos nativos.
+     *
      *
      * @var array
      */

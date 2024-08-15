@@ -11,7 +11,6 @@ class CatalogProductController extends Controller
 {
     public function index()
     {
-        //dd("entro en product");
         return response()->json(CatalogProduct::all());
     }
 
@@ -39,7 +38,6 @@ class CatalogProductController extends Controller
             return response()->json($product, 201);
 
         } catch (\Exception $e) {
-            // Manejar cualquier otro tipo de excepción
             return response()->json(['message' => 'Error to create product: ' . $e->getMessage()], 500);
         }
 

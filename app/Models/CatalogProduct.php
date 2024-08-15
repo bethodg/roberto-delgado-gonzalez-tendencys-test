@@ -6,12 +6,12 @@ use MongoDB\Laravel\Eloquent\Model as Eloquent;
 
 class CatalogProduct extends Eloquent
 {
-    protected $connection = 'mongodb'; // Especifica la conexión a MongoDB
+    protected $connection = 'mongodb';
 
-    protected $collection = 'catalog_products'; // Especifica la colección
+    protected $collection = 'catalog_products';
 
     /**
-     * Los atributos que son asignables en masa.
+     *
      *
      * @var array
      */

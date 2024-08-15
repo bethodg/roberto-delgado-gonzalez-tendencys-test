@@ -66,12 +66,10 @@ class UserController extends Controller
             'password' => 'sometimes|nullable|string|min:8',
         ]);
 
-        // Si se proporciona una nueva contraseña, hashearla antes de guardar
         if (isset($validatedData['password'])) {
             $validatedData['password'] = bcrypt($validatedData['password']);
         }
 
-        // Actualizar el usuario con los nuevos datos
         $user->update($validatedData);
 
         return response()->json($user, 200);

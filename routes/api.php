@@ -11,10 +11,10 @@ use App\Http\Controllers\Api\TokenController;
 // })->middleware('auth:sanctum');
 
 Route::prefix('products')->middleware('auth:sanctum')->group(function () {
-     // Rutas para operaciones en Batch
-     Route::post('batch', [CatalogProductController::class, 'batchStore']);
-     Route::put('batch', [CatalogProductController::class, 'batchUpdate']);
-     Route::delete('batch', [CatalogProductController::class, 'batchDestroy']);
+
+    Route::post('batch', [CatalogProductController::class, 'batchStore']);
+    Route::put('batch', [CatalogProductController::class, 'batchUpdate']);
+    Route::delete('batch', [CatalogProductController::class, 'batchDestroy']);
 
     Route::get('/', [CatalogProductController::class, 'index']);
     Route::get('{id}', [CatalogProductController::class, 'show']);
@@ -24,11 +24,11 @@ Route::prefix('products')->middleware('auth:sanctum')->group(function () {
 });
 
 Route::prefix('users')->group(function () {
-    Route::get('/', [UserController::class, 'index']);      // Obtener todos los usuarios
-    Route::get('{id}', [UserController::class, 'show']);    // Obtener un usuario específico
-    Route::post('/', [UserController::class, 'store']);     // Crear un nuevo usuario
-    Route::put('{id}', [UserController::class, 'update']);  // Actualizar un usuario existente
-    Route::delete('{id}', [UserController::class, 'destroy'])->middleware('auth:sanctum'); // Eliminar un usuario
+    Route::get('/', [UserController::class, 'index']);
+    Route::get('{id}', [UserController::class, 'show']);
+    Route::post('/', [UserController::class, 'store']);
+    Route::put('{id}', [UserController::class, 'update']);
+    Route::delete('{id}', [UserController::class, 'destroy'])->middleware('auth:sanctum');
 });
 
 Route::prefix('tokens')->group(function () {

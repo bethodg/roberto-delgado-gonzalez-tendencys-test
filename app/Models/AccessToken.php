@@ -6,12 +6,12 @@ use MongoDB\Laravel\Eloquent\Model as Eloquent;
 
 class AccessToken extends Eloquent
 {
-    protected $connection = 'mongodb'; // Especifica la conexión a MongoDB
+    protected $connection = 'mongodb';
 
-    protected $collection = 'access_tokens'; // Especifica la colección
+    protected $collection = 'access_tokens';
 
     /**
-     * Los atributos que son asignables en masa.
+     *
      *
      * @var array
      */
@@ -21,7 +21,7 @@ class AccessToken extends Eloquent
     ];
 
     /**
-     * Relación con el modelo User.
+     *
      */
     public function user()
     {
