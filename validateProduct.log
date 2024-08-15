@@ -1,0 +1,6 @@
+Input received: {"name":"Xbox Series S","description":"This is a sample product description.","height":10.5,"length":20.3,"width":15.2}
+Parsed product: {"name":"Xbox Series S","description":"This is a sample product description.","height":10.5,"length":20.3,"width":15.2}
+Validation result: {"valid":true}
+Input received: {"name":"Xbox Series S","description":"This is a sample product description.","height":10.5,"length":20.3,"width":15.2}
+Parsed product: {"name":"Xbox Series S","description":"This is a sample product description.","height":10.5,"length":20.3,"width":15.2}
+Validation result: {"valid":true}
