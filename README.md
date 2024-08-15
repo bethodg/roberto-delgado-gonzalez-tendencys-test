@@ -11,7 +11,7 @@
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/bethodg/tendencys-test.git
+git clone https://github.com/bethodg/roberto-delgado-gonzalez-tendencys-test.git
 ```
 ## 2. Install Dependencies
 
