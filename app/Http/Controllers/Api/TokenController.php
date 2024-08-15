@@ -23,7 +23,7 @@ class TokenController extends Controller
             return response()->json(['error' => 'Invalid credentials'], 401);
         }
 
-        $token = $user->createToken('API Token');
+        $token = $user->createToken('API Token', ['*'], now()->addHour());
 
         return response()->json(['access_token' => $token->plainTextToken]);
     }
